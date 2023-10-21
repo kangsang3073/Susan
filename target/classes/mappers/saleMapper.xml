@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Jindong.mappers.saleMapper">
+	<insert id="insert">
+        insert into sale(menu,qty,unit,sale_price,payment,sale_date)
+        values (#{menu},#{qty},#{unit},#{salePrice},#{payment},sysdate())
+    </insert>
+    
+    <select id="list" resultType="com.Jindong.dto.SaleDTO">
+    	select num,menu,qty,concat(qty,space(1),unit) qty1, sale_Price, payment, sale_date from sale
+    	<where>
+    		<if test="menu != null and !menu.equals('')">menu like CONCAT('%',#{menu},'%') </if>
+			<if test="payment != null and !payment.equals('')">and payment like CONCAT('%',#{payment},'%')</if>
+			<if test="sdate != null and !sdate.equals('')" >and sale_date between date_format(#{sdate}, '%Y-%m-%d') and now() </if>
+			<if test="edate != null and !edate.equals('')">and sale_date between date_format(#{sdate}, '%Y-%m-%d') and DATE_ADD(date_format(#{edate}, '%Y-%m-%d'), INTERVAL 1 DAY)</if>
+    	</where>
+    	order by sale_date desc
+    </select>
+    
+    <select id="update" resultType="com.Jindong.dto.SaleDTO">
+    	select * from sale
+    	where num = #{num}
+    </select>
+    
+    <update id="updatePro">
+    	update sale
+    	set menu=#{menu},qty=#{qty},unit=#{unit},sale_Price=#{salePrice},payment=#{payment}
+    	where num=#{num}
+    </update>
+    
+    <delete id="deletePro">
+    	delete from sale
+    	where num = #{num}
+    </delete>
+</mapper>

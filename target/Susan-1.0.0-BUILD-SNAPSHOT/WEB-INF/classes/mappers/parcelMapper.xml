@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Jindong.mappers.parcelMapper">
+	<insert id="insert">
+        insert into parcel(Get_Name ,Get_Num ,Get_Post_Num ,Get_Addr ,Get_Addr2 ,Get_Num2 , 
+        					Send_Name, Send_Num, Send_Post_Num, Send_Addr, Send_Addr2, menu, parcel_Date )
+        values (#{getName },#{getNum },#{getPostNum },#{getAddr },#{getAddr2 },#{getNum2 },
+        		#{sendName },#{sendNum },#{sendPostNum },#{sendAddr },#{sendAddr2  },#{menu  },sysdate())
+    </insert>
+    
+    <select id="list" resultType="com.Jindong.dto.ParcelDTO">
+    	select num,Get_Name ,Get_Num ,concat(Get_Addr,space(1),Get_Addr2) getAddr, Get_Num2 ,
+    			Send_Name ,Send_Num ,concat(Send_Addr,space(1),Send_Addr2) sendAddr,Menu ,parcel_Date
+    			from parcel
+    	<where>
+    		<if test="getName != null and !getName.equals('')">Get_Name like CONCAT('%',#{getName},'%') </if>
+			<if test="getNum != null and !getNum.equals('')">and Get_Num like CONCAT('%',#{getNum},'%')</if>
+			<if test="sdate != null and !sdate.equals('')" >and parcel_date between date_format(#{sdate}, '%Y-%m-%d') and now() </if>
+			<if test="edate != null and !edate.equals('')">and parcel_date between date_format(#{sdate}, '%Y-%m-%d') and DATE_ADD(date_format(#{edate}, '%Y-%m-%d'), INTERVAL 1 DAY)</if>
+    	</where>
+    	order by parcel_Date desc
+    </select>
+    
+    <select id="update" resultType="com.Jindong.dto.ParcelDTO">
+    	select * from parcel
+    	where num = #{num}
+    </select>
+    
+    <update id="updatePro">
+    	update parcel
+    	set Get_Name=#{getName},Get_Num=#{getNum},Get_Post_Num=#{getPostNum},Get_Addr=#{getAddr},Get_Addr2=#{getAddr2},
+    	Get_Num2=#{getNum2}, Send_Name=#{sendName},Send_Num=#{sendNum},Send_Post_Num=#{sendPostNum},
+    	Send_Addr=#{sendAddr},Send_Addr2=#{sendAddr2},Menu=#{menu}
+    	where num=#{num}
+    </update>
+    
+    <delete id="deletePro">
+    	delete from parcel
+    	where num = #{num}
+    </delete>
+</mapper>

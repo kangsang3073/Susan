@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Jindong.mappers.chartMapper">
+
+	<select id="contract" resultType="com.Jindong.dto.ChartDTO">
+		select menu, count(menu) count, sale_date from sale
+		where sale_date = date_format(now(),'%Y-%m-%d')
+		group by menu
+		order by count desc
+		limit 5
+	</select>
+	
+	<select id="sales" resultType="com.Jindong.dto.ChartDTO">
+		select sale_date, sum(sale_Price) sale_Price  from sale 
+		where sale_date between date_sub(now(), interval 7 day) and date_format(now(),'%Y-%m-%d')
+		group by sale_date
+		order by sale_date;
+	</select>
+</mapper>

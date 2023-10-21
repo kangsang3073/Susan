@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Jindong.mappers.customerMapper">
+	<insert id="insert">
+        insert into customer(name,Phone_Num,post_num,addr,addr2)
+        values (#{name},#{phoneNum},#{postNum},#{addr},#{addr2})
+    </insert>
+    
+    <select id="list" resultType="com.Jindong.dto.CustomerDTO">
+    	select num, Name, Phone_Num, concat(post_num, space(1), addr, space(1), addr2) addr from customer
+    	<where>
+    		<if test="name != null and !name.equals('')">name like CONCAT('%',#{name},'%') </if>
+			<if test="phoneNum != null and !phoneNum.equals('')">and phone_Num like CONCAT('%',#{phoneNum},'%')</if>
+    	</where>
+    	
+    </select>
+    
+    <select id="update" resultType="com.Jindong.dto.CustomerDTO">
+    	select * from customer
+    	where num = #{num}
+    </select>
+    
+    <update id="updatePro">
+    	update customer
+    	set name=#{name}, Phone_num=#{phoneNum}, post_num=#{postNum}, addr=#{addr}, addr2=#{addr2}
+    	where num=#{num}
+    </update>
+    
+    <delete id="deletePro">
+    	delete from customer
+    	where num = #{num}
+    </delete>
+</mapper>
