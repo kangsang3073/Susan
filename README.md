@@ -14,7 +14,8 @@
 ### <상세 코드>
 #### 고객관리 페이지  
 1. Model 
-    - 고객관리현황 DAO [CustomerDAO.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/dao/ProductionDAO.java)
+    - 고객관리현황 DAO [CustomerDAO.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/dao/CustomerDAO.java
+)
 
 2. View    
     - 고객관리 리스트 [guest/guestList.jsp](https://github.com/kangsang3073/Mealki/blob/main/src/main/webapp/WEB-INF/views/mps/production/listForm.jsp) 
