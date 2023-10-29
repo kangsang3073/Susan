@@ -21,35 +21,46 @@
     - 고객관리 리스트 [guest/guestList.jsp](https://github.com/kangsang3073/Mealki/blob/main/src/main/webapp/WEB-INF/views/mps/production/listForm.jsp) 
 
 3. Controller  
-    - 컨트롤러 [CustomerController.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/controller/ProductionController.java) 
+    - 컨트롤러 [CustomerController.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/controller/CustomerController.java
+)
 
 #### 택배관리 페이지 
 1. Model 
-    - 택배관리 DAO [ParcelDAO.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/dao/QualityDAO.java) 
+    - 택배관리 DAO [ParcelDAO.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/dao/ParcelDAO.java
+)
     
 2. View  
-    - 택배관리 리스트 [parcel/parcelList.jsp](https://github.com/kangsang3073/Mealki/blob/main/src/main/webapp/WEB-INF/views/mps/quality/listForm.jsp)   
+    - 택배관리 리스트 [parcel/parcelList.jsp](https://github.com/kangsang3073/Susan/blob/main/src/main/webapp/WEB-INF/views/parcel/parcelList.jsp
+)  
 
 3. Controller  
-    - 컨트롤러 [ParcelController.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/controller/QualityController.java)
+    - 컨트롤러 [ParcelController.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/controller/ParcelController.java
+)
 
 #### 구매관리 페이지 
 1. Model 
-    - 구매 DAO [StoreDAO.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/dao/QualityDAO.java) 
+    - 구매 DAO [StoreDAO.java](https://github.com/kangsang3073/Susan/blob/main/src/main/webapp/WEB-INF/views/store/storeList.jsp
+)
     
 2. View  
-    - 구매 리스트 [store/storeList.jsp](https://github.com/kangsang3073/Mealki/blob/main/src/main/webapp/WEB-INF/views/mps/quality/listForm.jsp)   
+    - 구매 리스트 [store/storeList.jsp](https://github.com/kangsang3073/Susan/blob/main/src/main/webapp/WEB-INF/views/store/storeList.jsp
+)
 
 3. Controller  
-    - 컨트롤러 [StoreController.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/controller/QualityController.java)
+    - 컨트롤러 [StoreController.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/controller/StoreController.java
+)
       
 #### 판매관리 페이지 
 1. Model 
-    - 판매관리 DAO [SaleDAO.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/dao/QualityDAO.java) 
+    - 판매관리 DAO [SaleDAO.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/dao/SaleDAO.java
+)
     
 2. View  
-    - 판매관리 리스트 [sale/saleList.jsp](https://github.com/kangsang3073/Mealki/blob/main/src/main/webapp/WEB-INF/views/mps/quality/listForm.jsp)   
+    - 판매관리 리스트 [sale/saleList.jsp](https://github.com/kangsang3073/Susan/blob/main/src/main/webapp/WEB-INF/views/sale/saleList.jsp
+)   
 
 3. Controller  
-    - 컨트롤러 [SaleController.java](https://github.com/kangsang3073/Mealki/blob/main/src/main/java/com/itwillbs/controller/QualityController.java)
+    - 컨트롤러 [SaleController.java](https://github.com/kangsang3073/Susan/blob/main/src/main/java/com/Jindong/controller/SaleController.java
+)
+
   
