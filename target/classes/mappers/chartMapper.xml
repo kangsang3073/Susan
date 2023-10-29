@@ -6,7 +6,7 @@
 	<select id="contract" resultType="com.Jindong.dto.ChartDTO">
 		select menu, count(menu) count, sale_date from sale
 		where sale_date = date_format(now(),'%Y-%m-%d')
-		group by menu
+		group by menu,sale_date
 		order by count desc
 		limit 5
 	</select>

@@ -49,7 +49,7 @@
                             <div class="card-header">
                                 <i class="fas fa-table me-1">판매 정보 조회</i>
                                 판매 정보
-                                <input type="button" class="btn btn-primary" id="IconButton2" value="엑셀다운로드">
+<!--                                 <input type="button" class="btn btn-primary" id="IconButton2" value="엑셀다운로드"> -->
                                 <input type="button" class="btn btn-primary" id="IconButton2" value="신규등록" onclick="insert()">
                             </div>
                             <div class="card-body">

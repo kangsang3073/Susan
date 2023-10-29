@@ -11,7 +11,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/admin">
                                 <div class="sb-nav-link-icon"><i class="fa fa-user"></i></div>
                                 계정 관리
                             </a>

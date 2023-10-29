@@ -7,4 +7,27 @@
         where id = #{Id} and pass = #{Pass}
     </select>
     
+	<select id="list" resultType="com.Jindong.dto.EmployeeDTO">
+        select * from employee
+    </select>
+    <insert id="insert">
+        insert into employee(id,pass)
+        values (#{Id},#{Pass})
+    </insert>
+    
+    <select id="update" resultType="com.Jindong.dto.EmployeeDTO">
+    	select * from employee
+    	where num = #{num}
+    </select>
+    
+    <update id="updatePro">
+    	update employee
+    	set pass=#{Pass}
+    	where num=#{num}
+    </update>
+    
+    <delete id="deletePro">
+    	delete from employee
+    	where num = #{num}
+    </delete>
 </mapper>
